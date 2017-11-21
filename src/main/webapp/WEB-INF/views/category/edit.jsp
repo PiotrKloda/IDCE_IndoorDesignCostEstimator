@@ -22,8 +22,9 @@
 </head>
 
 <body>
-<%@ include file="../../../WEB-INF/header.jsp" %>
+
 	<div style="padding-left: 15px">
+	<%@ include file="../../../WEB-INF/header.jsp" %>
 		<div>
 		
 			<h1>Edit category</h1>
@@ -54,7 +55,7 @@
 					</f:select>
 				</div>
 				<div>
-					<input type="submit" value="Save edited category" class="btn btn-default">
+					<input type="submit" value="Save edited category" class="btn btn-success">
 				</div>
 			</f:form>
 		</div>

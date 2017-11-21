@@ -26,8 +26,19 @@
 	<div style="padding-left: 15px">
 		<div>
 
-			<h1>Add category</h1>
-			<f:form method="post" modelAttribute="category" class="col-xs-9 well">
+			<h1>Add product</h1>
+			<f:form method="post" modelAttribute="product" class="col-xs-9 well">
+
+
+				<div class="form-group">
+					<label class="control-label">Category:</label>
+					<f:select path="category" class="form-control">
+						<f:option value="0" label="---Select Category---" />
+						<f:options itemValue="id" itemLabel="name" items="${categories}" />
+					</f:select><f:errors path="category" cssClass="error" />
+				</div>
+
+
 
 				<div class="form-group">
 					<label class="control-label">Name:</label>
@@ -41,14 +52,40 @@
 						class="form-control" />
 					<f:errors path="description" cssClass="error" />
 				</div>
-
+				
 				<div class="form-group">
+					<label class="control-label">Producent:</label>
+					<f:input path="producent" class="form-control" />
+					<f:errors path="producent" cssClass="error" />
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label">Price:</label>
+					<f:input type="number" path="price" class="form-control" />
+					<f:errors path="price" cssClass="error" />
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label">Quantity unit:</label>
+					<f:input path="quantityUnit" class="form-control" />
+					<f:errors path="quantityUnit" cssClass="error" />
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label">Photo Link:</label>
+					<f:input path="linkToPhoto" class="form-control" />
+					<f:errors path="linkToPhoto" cssClass="error" />
+				</div>
+				
+
+
+				<%-- <div class="form-group">
 					<label class="control-label">Subcategory of:</label>
 					<f:select path="parent" class="form-control">
 						<f:option value="0" label="---No parent category---" />
 						<f:options itemValue="id" itemLabel="name" items="${parents}" />
 					</f:select>
-				</div>
+				</div> --%>
 
 				<%-- <div>
 			Attributes:
@@ -96,14 +133,14 @@
 				<div>
 
 					<button type="submit" value="Submit" class="btn btn-success">Save
-						Category</button>
+						Product</button>
 
 				</div>
 			</f:form>
 		</div>
 
 		<div style="clear: both" style="padding-left: 15px">
-			<a href="http://localhost:8080/IDCE/category/list">back</a>
+			<a href="http://localhost:8080/IDCE/product/list">back</a>
 		</div>
 
 	</div>

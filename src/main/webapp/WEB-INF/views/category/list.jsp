@@ -9,9 +9,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-	<%@ include file="../../../WEB-INF/header.jsp"%>
+
 	<div style="padding-left: 15px">
-		<h1>List of Categories</h1>
+		<%@ include file="../../../WEB-INF/header.jsp"%>
+		<h1>Categories</h1>
 		<table class="table table-bordered well">
 			<tr>
 				<th>Id</th>
@@ -30,15 +31,24 @@
 					<td>${category.parent.name}</td>
 					<td><a href="">All products---</a></td>
 					<td><a
-						href="http://localhost:8080/IDCE/category/edit/${category.id}">Edit</a>
+						href="http://localhost:8080/IDCE/category/edit/${category.id}" class="btn btn-warning" role="button">Edit</a>
 						<a
-						href="http://localhost:8080/IDCE/category/delete/${category.id}">Delete</a></td>
+						href="http://localhost:8080/IDCE/category/delete/${category.id}" class="btn btn-danger" role="button">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 
-		<br> <a href="http://localhost:8080/IDCE/category/add"
-			class="link">Add Category</a>
+
+
+		<form action="http://localhost:8080/IDCE/category/add" method="get">
+			<button type="submit" value="Submit" class="btn btn-success">Add
+				Category</button>
+		</form>
+
+
+
+		<br> <a href="http://localhost:8080/IDCE/db" >Back
+			to DataBase management menu</a>
 	</div>
 </body>
 </html>

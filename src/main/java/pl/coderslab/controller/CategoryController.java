@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import pl.coderslab.entity.Attribute;
 import pl.coderslab.entity.Category;
@@ -63,8 +62,9 @@ public class CategoryController {
 	 }
 
 	@GetMapping("/delete/{id}")
-	public String deleteCategory(@ModelAttribute Category category) {
-		categoryRepository.delete(category);
+	public String deleteCategory(@PathVariable long id) {
+//		Category category = categoryRepository.findOne(id);
+		categoryRepository.delete(id);
 		return "redirect:/category/list";
 	}
 	

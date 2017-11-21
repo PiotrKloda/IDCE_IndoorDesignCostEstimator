@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,10 +11,11 @@
 </head>
 <body>
 
-<a href="">HomePage </a> <br>
-<a href="">All Groups</a> <br>
 
-
-<hr>
+	<div class="well">
+		<h3>IDCE - Interior Design Cost Estimator</h3>
+		<a href="http://localhost:8080/IDCE/">HomePage </a> <br>
+		<a href="http://localhost:8080/IDCE/db">DataBase management </a>
+	</div>
 </body>
 </html>

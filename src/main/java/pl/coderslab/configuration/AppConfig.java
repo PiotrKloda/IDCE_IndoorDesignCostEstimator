@@ -23,8 +23,6 @@ import pl.coderslab.converter.CategoryConverter;
 @EnableTransactionManagement 
 @EnableWebMvc
 @EnableJpaRepositories(basePackages = "pl.coderslab.repository")
-
-
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 
