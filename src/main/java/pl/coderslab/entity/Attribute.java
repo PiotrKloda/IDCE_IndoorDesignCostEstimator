@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,11 +25,15 @@ public class Attribute {
 	@NotNull
 	private String name;
 	
+	@NotNull
+	private String unit;
 	
+	
+
 	@OneToMany(mappedBy="attribute", cascade=CascadeType.ALL)
 	private List<ProductAttributeValue> productAttributeValues = new ArrayList<>();
 	
-	@ManyToMany(mappedBy="attributes")
+	@ManyToMany(mappedBy="attributes", fetch = FetchType.EAGER)
 	private List<Category> categories = new ArrayList<>();
 	
 	//---------------------------------------------------------------------------------
@@ -63,6 +68,14 @@ public class Attribute {
 
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
+	}
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
 	
 	

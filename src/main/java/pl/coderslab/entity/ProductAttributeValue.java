@@ -19,7 +19,6 @@ public class ProductAttributeValue {
 	@NotNull
 	public String value;
 
-	public String unit;
 	
 	@ManyToOne
 	private Product product;
@@ -38,9 +37,6 @@ public class ProductAttributeValue {
 		return value;
 	}
 
-	public String getUnit() {
-		return unit;
-	}
 
 	public Product getProduct() {
 		return product;
@@ -58,9 +54,6 @@ public class ProductAttributeValue {
 		this.value = value;
 	}
 
-	public void setUnit(String unit) {
-		this.unit = unit;
-	}
 
 	public void setProduct(Product product) {
 		this.product = product;
