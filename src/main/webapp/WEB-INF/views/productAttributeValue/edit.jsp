@@ -23,7 +23,7 @@
 	<%@ include file="../../../WEB-INF/header.jsp"%>
 	<div style="padding-left: 15px">
 		<div>
-			<h1>Add Product Attribute Value</h1>
+			<h1>Edit Product Attribute Value</h1>
 			<f:form method="post" modelAttribute="productAttributeValue"
 				class="col-xs-9 well">
 
@@ -50,7 +50,7 @@
 				</div>
 
 				<div>
-					<button type="submit" value="Submit" class="btn btn-success">Save
+					<button type="submit" value="Submit" class="btn btn-success">Save edited
 						Product Attribute Value</button>
 				</div>
 			</f:form>

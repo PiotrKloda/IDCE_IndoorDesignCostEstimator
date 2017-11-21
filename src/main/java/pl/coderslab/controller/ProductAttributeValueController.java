@@ -18,63 +18,68 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.entity.Attribute;
 import pl.coderslab.entity.Category;
 import pl.coderslab.entity.Product;
+import pl.coderslab.entity.ProductAttributeValue;
 import pl.coderslab.repository.AttributeRepository;
 import pl.coderslab.repository.CategoryRepository;
+import pl.coderslab.repository.ProductAttributeValueRepository;
 import pl.coderslab.repository.ProductRepository;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/productAttributeValue")
 public class ProductAttributeValueController {
 
-	@Autowired
-	CategoryRepository categoryRepository;
+//	@Autowired
+//	CategoryRepository categoryRepository;
 	@Autowired
 	ProductRepository productRepository;
 	@Autowired
 	AttributeRepository attributeRespository;
+	@Autowired
+	ProductAttributeValueRepository productAttributeValueRepository;
 	
 	
 	@GetMapping("/list")
 	public String showList(Model model) {
-		model.addAttribute("categories", productRepository.findAll());
-		return "product/list";
+		model.addAttribute("values", productAttributeValueRepository.findAll());
+		return "productAttributeValue/list";
 	}
 	
 
 	@GetMapping("/add")
 	public String addCategory(Model model) {
-		model.addAttribute("product", new Product());
-		return "product/add";
+		model.addAttribute("productAttributeValue", new ProductAttributeValue());
+		return "productAttributeValue/add";
 	}
 
 	@PostMapping("/add")
-	public String processAddCategoryForm(Model model, @Valid Product product, BindingResult result) {
+	public String processAddCategoryForm(Model model, @Valid ProductAttributeValue productAttributeValue, BindingResult result) {
+		
 		if (result.hasErrors()) {
-			return "product/add";
+			return "productAttributeValue/add";
 		}
-		productRepository.save(product);
-		return "redirect:/product/list";
+		productAttributeValueRepository.save(productAttributeValue);
+		return "redirect:/productAttributeValue/list";
 	}
 
 	@GetMapping("/edit/{id}")
 	public String editProduct(Model model, @PathVariable long id) {
-		model.addAttribute("product", productRepository.findOne(id));
-		return "product/edit";
+		model.addAttribute("productAttributeValue", productAttributeValueRepository.findOne(id));
+		return "productAttributeValue/edit";
 	}
 	 @PostMapping("/edit/{id}")
-	 public String processEditProductForm(Model model, @Valid Product product, BindingResult result) {
+	 public String processEditProductForm(Model model, @Valid ProductAttributeValue productAttributeValue, BindingResult result) {
 	 if (result.hasErrors()) {
 	 return "/edit/{id}";
 	 }
-	 productRepository.save(product);
-	 return "redirect:/product/list";
+	 productAttributeValueRepository.save(productAttributeValue);
+	 return "redirect:/productAttributeValue/list";
 	 }
 	
 	
 	@GetMapping("/delete/{id}")
 	public String deleteProduct(@PathVariable long id) {
-		productRepository.delete(id);
-		return "redirect:/product/list";
+		productAttributeValueRepository.delete(id);
+		return "redirect:/productAttributeValue/list";
 	}
 	
 
@@ -92,14 +97,14 @@ public class ProductAttributeValueController {
 		return productRepository.findAll();
 	}
 	
-	@ModelAttribute("categories")
-	public List<Category> allCategories() {
-		return categoryRepository.findAll();
-	}
-
-//	@ModelAttribute("attributes")
-//	public List<Attribute> allAttributes() {
-//		return attributeRespository.findAll();
+//	@ModelAttribute("categories")
+//	public List<Category> allCategories() {
+//		return categoryRepository.findAll();
 //	}
+
+	@ModelAttribute("attributes")
+	public List<Attribute> allAttributes() {
+		return attributeRespository.findAll();
+	}
 
 }

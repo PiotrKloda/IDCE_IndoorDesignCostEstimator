@@ -26,7 +26,7 @@
 	<a href="http://localhost:8080/IDCE/category/list"> <div class="well well-nl col-xs-3" style="clear: both">Manage Categories</div> </a> <br>
 	<a href="http://localhost:8080/IDCE/attribute/list"> <div class="well well-nl col-xs-3" style="clear: both">Manage Attributes</div> </a> 
 	<a href="http://localhost:8080/IDCE/product/list"> <div class="well well-nl col-xs-3" style="clear: both">Manage Products</div> </a> 
-	<a href=""> <div class="well well-nl col-xs-3" style="clear: both">---Manage AttributeValues</div> </a> 
+	<a href="http://localhost:8080/IDCE/productAttributeValue/list"> <div class="well well-nl col-xs-3" style="clear: both">Manage Product Attribute Values</div> </a> 
 	
 	<div style="clear: both">
 	<br>
@@ -37,3 +37,4 @@
 
 </body>
 </html>
+
