@@ -40,7 +40,7 @@ public class AttributeController {
 	}
 
 	@PostMapping("/add")
-	public String processAddCategoryForm(Model model, @Valid Attribute attribute, BindingResult result) {
+	public String processAddCategoryForm(Model model,@Valid Attribute attribute, BindingResult result) {
 		if (result.hasErrors()) {
 			return "attribute/add";
 		}
@@ -82,22 +82,13 @@ public class AttributeController {
 	
 	//--------------------------------------------------------------------
 
-//	@ModelAttribute("parents")
-//	public List<Category> allCategories() {
-//		return categoryRepository.findAll();
-//	}
-//
-//	@ModelAttribute("products")
-//	public List<Product> allProducts() {
-//		return productRepository.findAll();
-//	}
 
-	@ModelAttribute("attributes")
+	@ModelAttribute("allAttributes")
 	public List<Attribute> allAttributes() {
 		return attributeRespository.findAll();
 	}
 	
-	@ModelAttribute("categories")
+	@ModelAttribute("allCategories")
 	public List<Category> allCategories() {
 		return categoryRepository.findAll();
 	}

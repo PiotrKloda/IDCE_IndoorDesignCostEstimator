@@ -47,7 +47,7 @@
 					<label class="control-label">Categories Applying:</label>
 					<f:select path="categories" class="form-control" multiple="true">
 						<f:option value="0" label="---No Category category---" />
-						<f:options itemValue="id" itemLabel="name" items="${categories}" />
+						<f:options itemValue="id" itemLabel="name" items="${allCategories}" />
 					</f:select>
 				</div>
 

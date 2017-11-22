@@ -30,13 +30,11 @@ public class Attribute {
 	
 	
 
-	@OneToMany(mappedBy="attribute", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="attribute")
 	private List<ProductAttributeValue> productAttributeValues = new ArrayList<>();
 	
-	@ManyToMany(mappedBy="attributes", fetch = FetchType.EAGER)
-	private List<Category> categories = new ArrayList<>();
-	
-	//---------------------------------------------------------------------------------
+	@ManyToMany(fetch=FetchType.EAGER)
+	private List<Category> categories;
 
 	public long getId() {
 		return id;
@@ -44,6 +42,10 @@ public class Attribute {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getUnit() {
+		return unit;
 	}
 
 	public List<ProductAttributeValue> getProductAttributeValues() {
@@ -62,6 +64,10 @@ public class Attribute {
 		this.name = name;
 	}
 
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
 	public void setProductAttributeValues(List<ProductAttributeValue> productAttributeValues) {
 		this.productAttributeValues = productAttributeValues;
 	}
@@ -69,14 +75,10 @@ public class Attribute {
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
+	
+	//---------------------------------------------------------------------------------
 
-	public String getUnit() {
-		return unit;
-	}
 
-	public void setUnit(String unit) {
-		this.unit = unit;
-	}
 	
 	
 	

@@ -15,53 +15,62 @@
 	color: white;
 }
 </style>
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 </head>
 
 <body>
 	<%@ include file="../../../WEB-INF/header.jsp"%>
 	<div style="padding-left: 15px">
 		<div>
-
-			<h1>Add Attribute</h1>
-			<f:form method="post" modelAttribute="attribute"
+			<h1>Add Attribute for: ${productAttributeValue.product.name}</h1>
+			
+			
+			
+			
+			
+			
+			<f:form method="post" modelAttribute="productAttributeValue"
 				class="col-xs-9 well">
 
-				<div class="form-group">
-					<label class="control-label">Name:</label>
-					<f:input path="name" class="form-control" />
-					<f:errors path="name" cssClass="error" />
-				</div>
+
+
+				<f:hidden path="product.id" value="${product_id}"/>
 				
-				<div class="form-group">
-					<label class="control-label">Unit:</label>
-					<f:input path="unit" class="form-control" />
-					<f:errors path="unit" cssClass="error" />
-				</div>
 
 
 				<div class="form-group">
-					<label class="control-label">Categories Applying:</label>
-					<f:select path="categories" class="form-control" multiple="true">
-						<f:option value="0" label="---No Category category---" />
-						<f:options itemValue="id" itemLabel="name" items="${allCategories}" />
+					<label class="control-label">Attribute:</label>
+					<f:select path="attribute.id" class="form-control">
+						<f:option value="0" label="---Choose attribute---" />
+						<f:options itemValue="id" itemLabel="name" items="${attributes}" />
 					</f:select>
 				</div>
 
-				<div>
 
-					<button type="submit" value="Submit" class="btn btn-success">Save
-						Attribute</button>
-
+				<div class="form-group">
+					<label class="control-label">Value:</label>
+					<f:input path="value" class="form-control" />
+					<f:errors path="value" cssClass="error" />
 				</div>
+
+
+
+				<div>
+					<button type="submit" value="Submit" class="btn btn-success">Save Attribute Value</button>
+				</div>
+				
+				
+				
 			</f:form>
+			
+			
+			
+			
 		</div>
 
 		<div style="clear: both" style="padding-left: 15px">
-			<a href="http://localhost:8080/IDCE/category/list">back</a>
+			<a href="http://localhost:8080/IDCE/productAttributeValue/list">back</a>
 		</div>
 
 	</div>

@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.entity.Attribute;
 import pl.coderslab.entity.Category;
 import pl.coderslab.entity.Product;
+import pl.coderslab.entity.ProductAttributeValue;
 import pl.coderslab.repository.AttributeRepository;
 import pl.coderslab.repository.CategoryRepository;
+import pl.coderslab.repository.ProductAttributeValueRepository;
 import pl.coderslab.repository.ProductRepository;
 
 @Controller
@@ -32,6 +34,8 @@ public class ProductController {
 	ProductRepository productRepository;
 	@Autowired
 	AttributeRepository attributeRespository;
+	@Autowired
+	ProductAttributeValueRepository productAttributeValueRepository;
 	
 	
 	@GetMapping("/list")
@@ -77,6 +81,16 @@ public class ProductController {
 		return "redirect:/product/list";
 	}
 	
+	@GetMapping("/{id}")
+	public String productDetails(@PathVariable long id,Model model) {
+		
+		Product product = productRepository.findOne(id);
+		List<ProductAttributeValue> productAttributeValues = productAttributeValueRepository.findProductAttributeValuesByProduct_id(id);
+		model.addAttribute("product", product);
+		model.addAttribute("productAttributeValues", productAttributeValues);
+		return "/product/details";
+	}
+	
 
 	
 	
@@ -87,12 +101,12 @@ public class ProductController {
 //		return categoryRepository.findAll();
 //	}
 
-	@ModelAttribute("products")
+	@ModelAttribute("allProducts")
 	public List<Product> allProducts() {
 		return productRepository.findAll();
 	}
 	
-	@ModelAttribute("categories")
+	@ModelAttribute("allCategories")
 	public List<Category> allCategories() {
 		return categoryRepository.findAll();
 	}

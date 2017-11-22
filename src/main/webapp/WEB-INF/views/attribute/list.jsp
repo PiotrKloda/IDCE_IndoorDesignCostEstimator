@@ -22,7 +22,7 @@
 				<th>Actions</th>
 			</tr>
 
-			<c:forEach items="${attributes}" var="attribute">
+			<c:forEach items="${allAttributes}" var="attribute">
 				<tr>
 					<td>${attribute.id}</td>
 					<td>${attribute.name}</td>

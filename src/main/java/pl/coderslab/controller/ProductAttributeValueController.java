@@ -28,8 +28,6 @@ import pl.coderslab.repository.ProductRepository;
 @RequestMapping("/productAttributeValue")
 public class ProductAttributeValueController {
 
-//	@Autowired
-//	CategoryRepository categoryRepository;
 	@Autowired
 	ProductRepository productRepository;
 	@Autowired
@@ -60,6 +58,65 @@ public class ProductAttributeValueController {
 		productAttributeValueRepository.save(productAttributeValue);
 		return "redirect:/productAttributeValue/list";
 	}
+	
+	
+	
+	
+	
+	
+	@GetMapping("/addForProduct/{productId}")
+	public String addProductAttributeValueForSpecifiedProduct(@PathVariable("productId") Long id, Model model) {
+		
+		ProductAttributeValue productAttributeValue = new ProductAttributeValue();
+		model.addAttribute("productAttributeValue", productAttributeValue);
+		model.addAttribute("product_id", id);
+		
+		System.err.println("--pav.id =     " + productAttributeValue.getId());
+		System.err.println("--pav.value =    " + productAttributeValue.getValue());
+		System.err.println("--pav.product =     " + productAttributeValue.getProduct());
+		System.err.println("--pav.attribute = " + productAttributeValue.getAttribute());
+		
+		return "productAttributeValue/addForSpecifiedProduct";
+	}
+
+	
+	@PostMapping("/addForProduct/{productId}")
+	public String ProcessAddProductAttributeValueForSpecifiedProduct(@PathVariable("productId") Long id, @Valid ProductAttributeValue productAttributeValue, BindingResult result,  Model model) {
+		
+		
+				System.err.println("--pav.id =     " + productAttributeValue.getId());
+				System.err.println("--pav.value =    " + productAttributeValue.getValue());
+				System.err.println("--pav.product =     " + productAttributeValue.getProduct());
+				System.err.println("--pav.attribute = " + productAttributeValue.getAttribute());
+		
+		
+		if (result.hasErrors()) {
+			return "productAttributeValue/addForProduct/"+id;
+		}
+		productAttributeValueRepository.save(productAttributeValue);
+		return "redirect:/product/"+id;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@GetMapping("/edit/{id}")
 	public String editProduct(Model model, @PathVariable long id) {
@@ -86,22 +143,12 @@ public class ProductAttributeValueController {
 	
 	
 //	//--------------------------------------------------------------------
-//
-//	@ModelAttribute("parents")
-//	public List<Category> allCategories() {
-//		return categoryRepository.findAll();
-//	}
 
 	@ModelAttribute("products")
 	public List<Product> allProducts() {
 		return productRepository.findAll();
 	}
 	
-//	@ModelAttribute("categories")
-//	public List<Category> allCategories() {
-//		return categoryRepository.findAll();
-//	}
-
 	@ModelAttribute("attributes")
 	public List<Attribute> allAttributes() {
 		return attributeRespository.findAll();
