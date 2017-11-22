@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name="attributes")
 public class Attribute {
@@ -23,6 +25,7 @@ public class Attribute {
 	private long id;
 	
 	@NotNull
+	@NotBlank
 	private String name;
 	
 	@NotNull

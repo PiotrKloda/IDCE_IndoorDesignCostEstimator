@@ -8,6 +8,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="prodAttrValues")
 public class ProductAttributeValue {
@@ -17,6 +20,7 @@ public class ProductAttributeValue {
 	private long id;
 	
 	@NotNull
+	@NotBlank
 	public String value;
 
 	

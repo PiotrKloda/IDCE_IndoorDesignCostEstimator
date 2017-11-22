@@ -39,11 +39,10 @@
 		</table>
 
 
-
-		<form action="http://localhost:8080/IDCE/productAttributeValue/add" method="get">
-			<button type="submit" value="Submit" class="btn btn-success">Add
-				Product Attribute Value</button>
-		</form>
+		
+		<br> <a href="http://localhost:8080/IDCE/productAttributeValue/add"
+			class="btn btn-success" role="button">Add
+				Product Attribute Value</a>
 
 
 

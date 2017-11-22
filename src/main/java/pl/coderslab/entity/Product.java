@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 
 @Entity
 @Table(name="products")
@@ -21,11 +23,11 @@ public class Product {
 	private long id;
 	
 	@NotNull
+	@NotBlank
 	private String name;
 
 	private String description;
 	
-	@NotNull
 	private Double price;
 	
 	

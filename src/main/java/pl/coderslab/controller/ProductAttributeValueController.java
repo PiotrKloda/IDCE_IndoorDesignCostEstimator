@@ -54,7 +54,7 @@ public class ProductAttributeValueController {
 			BindingResult result) {
 
 		if (result.hasErrors()) {
-			return "productAttributeValue/add";
+			return "/productAttributeValue/add";
 		}
 		productAttributeValueRepository.save(productAttributeValue);
 		return "redirect:/productAttributeValue/list";
@@ -100,7 +100,7 @@ public class ProductAttributeValueController {
 		System.err.println("--pav.product =     " + productAttributeValue.getProduct());
 		System.err.println("--pav.attribute = " + productAttributeValue.getAttribute());
 		if (result.hasErrors()) {
-			return "productAttributeValue/addForProduct/" + id;
+			return "productAttributeValue/addForSpecifiedProduct";
 		}
 		productAttributeValueRepository.save(productAttributeValue);
 		return "redirect:/product/" + id;

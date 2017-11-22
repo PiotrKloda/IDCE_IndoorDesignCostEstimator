@@ -22,7 +22,7 @@
 				<th>Producent</th>
 				<th>Price</th>
 				<th>Quantity unit</th>
-				<th>Photo link</th>
+				<!-- <th>Photo link</th> -->
 				<th>Details</th>
 				<th>Actions</th>
 			</tr>
@@ -36,8 +36,8 @@
 					<td>${product.producent}</td>
 					<td>${product.price}</td> 
 					<td>${product.quantityUnit}</td> 
-					<td>${product.linkToPhoto}</td> 
-					<td><a href="http://localhost:8080/IDCE/product/${product.id}">?Details</a></td> 
+					<%-- <td>${product.linkToPhoto}</td>  --%>
+					<td><a href="http://localhost:8080/IDCE/product/${product.id}">Details</a></td> 
 					<td><a
 						href="http://localhost:8080/IDCE/product/edit/${product.id}" class="btn btn-warning" role="button">Edit</a>
 						<a
