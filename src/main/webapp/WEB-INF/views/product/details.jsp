@@ -66,9 +66,9 @@
 					<td>${productAttributeValue.value}</td>
 					<td>${productAttributeValue.attribute.unit}</td>
 					<td><a
-						href="http://localhost:8080/IDCE/productAttributeValue/edit/${productAttributeValue.id}"
+						href="http://localhost:8080/IDCE/productAttributeValue/editForProduct/${productAttributeValue.id}"
 						class="btn btn-warning" role="button">Edit</a> <a
-						href="http://localhost:8080/IDCE/productAttributeValue/delete/${productAttributeValue.id}"
+						href="http://localhost:8080/IDCE/productAttributeValue/deletedForProduct/${productAttributeValue.id}"
 						class="btn btn-danger" role="button">Delete</a></td>
 				</tr>
 			</c:forEach>
