@@ -17,24 +17,24 @@
 
 <body>
 	<div style="padding-left: 15px">
-	
-	
-		<h1 class="well">IDCE - Interior Design Cost Estimator</h1>
-		
-		
-		<h3 class="well">Home page</h3>
-		
-		
-		
-		<br> <a href="http://localhost:8080/IDCE/db">
-			<div class="well well-nl col-xs-3">Manage DataBase</div>
+		<%@ include file="../../../WEB-INF/headerProject.jsp"%>
+
+
+		<h3>PROJECT</h3>
+
+
+		<br> <a href="http://localhost:8080/IDCE/project/new">
+			<div class="well well-nl col-xs-3">New Project</div>
 		</a> <br> <a href="http://localhost:8080/IDCE/project">
-			<div class="well well-nl col-xs-3" style="clear: both">
-				Project</div>
-		</a>
-
-
+			<div class="well well-nl col-xs-3" style="clear: both">---LoadProject</div>
+		</a> <br> 
+		<a href="http://localhost:8080/IDCE/project">
+			<div class="well well-nl col-xs-3" style="clear: both">---Search Products</div>
+		</a> <br> 
 	</div>
+	</div>
+
 
 </body>
 </html>
+

@@ -13,9 +13,8 @@
 
 
 	<div class="well">
-		<a href="http://localhost:8080/IDCE/"><h3>IDCE - Interior Design Cost Estimator</h3></a> 
-		<br>
-		<a href="http://localhost:8080/IDCE/db">DataBase management homepage</a>
+		<a href="http://localhost:8080/IDCE/"><h3>IDCE - Interior Design Cost Estimator</h3></a> <br>
+		<a href="http://localhost:8080/IDCE/db">---DataBase management </a>
 	</div>
 </body>
 </html>

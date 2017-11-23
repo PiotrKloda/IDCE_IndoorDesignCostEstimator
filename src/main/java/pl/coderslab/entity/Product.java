@@ -44,6 +44,9 @@ public class Product {
 	
 	@OneToMany(mappedBy="product")
 	private List<ProductAttributeValue> productAttributeValues;
+	
+	@OneToMany(mappedBy="product")
+	private List<CartItem> cartItems;
 
 	//---------------------------------------------------------------------------------
 	
