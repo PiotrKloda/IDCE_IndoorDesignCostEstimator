@@ -11,7 +11,21 @@ Application developed for client whose buisness is intoerior house design. It is
 ## Functionality
 Dataase schema:
 
-![alt text](https://github.com/PiotrKloda/CodingSQL_Servlets/blob/master/Screenshots/dbSchema.png "db schema")
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/dbSchema.png "db schema")
+
+Adding Categories:
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/categories.png "add_categories")
+
+Adding Attributes to categories:
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/Attributes.png "add_attributes")
+
+Adding Products:
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/products.png "add_products")
+
+Adding values to specific product attributes: 
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/product-attributes.png "add_values")
+
+
 
 ## To Expand:
 1. Add internal messages
