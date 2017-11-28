@@ -30,6 +30,7 @@ Adding values to specific product attributes:
 ![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/product-attributes.png "add_values")
 
 Manage projects: 
+
 ![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/Project.png "add_project")
 
 
