@@ -40,6 +40,7 @@ Manage projects:
 3. Filters
 4. Protect data input - REGEX
 5. Adding products to project
+6. Add tables - producent, style
 
 
 
