@@ -13,6 +13,10 @@ Dataase schema:
 
 ![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/dbSchema.png "db schema")
 
+
+Main page - manage database or projects: 
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/intro.png "add_project")
+
 Adding Categories:
 ![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/categories.png "add_categories")
 
@@ -25,6 +29,8 @@ Adding Products:
 Adding values to specific product attributes: 
 ![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/product-attributes.png "add_values")
 
+Manage projects: 
+![alt text](https://github.com/PiotrKloda/IDCE_IndoorDesignCostEstimator/blob/master/zResouces/Screenshots/Project.png "add_project")
 
 
 ## To Expand:
