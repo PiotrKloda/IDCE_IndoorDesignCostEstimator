@@ -34,7 +34,7 @@
 					<label class="control-label">Category:</label>
 					<f:select path="category" class="form-control">
 						<f:option value="0" label="---Select Category---" />
-						<f:options itemValue="id" itemLabel="name" items="${categories}" />
+						<f:options itemValue="id" itemLabel="name" items="${allCategories}" />
 					</f:select><f:errors path="category" cssClass="error" />
 				</div>
 

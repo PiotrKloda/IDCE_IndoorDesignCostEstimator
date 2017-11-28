@@ -43,7 +43,7 @@ public class projectController {
 	}
 	
 	
-	
+	//ModelAttribute vs wysylane danych w metodzie ? 
 	
 	
 }
