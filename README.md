@@ -35,7 +35,11 @@ Manage projects:
 
 
 ## To Expand:
-1. Add internal messages
+1. Logging in
+2. Searching tool
+3. Filters
+4. Protect data input - REGEX
+5. Adding products to project
 
 
 
