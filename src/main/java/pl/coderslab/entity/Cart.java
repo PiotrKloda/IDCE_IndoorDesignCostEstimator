@@ -27,12 +27,10 @@ public class Cart {
 	private String name;
 	
 	private Date created;
-	private Date saved; //when user prints cart
+	private Date saved; 
 	
 	@OneToMany(mappedBy="cart")
 	private List<CartItem> cartItems;
-	
-	////////////////////////////////////////////
 	
 	
 	public long getId() {

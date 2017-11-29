@@ -17,26 +17,24 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="attributes")
+@Table(name = "attributes")
 public class Attribute {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
 	@NotBlank
 	private String name;
-	
+
 	@NotNull
 	private String unit;
-	
-	
 
-	@OneToMany(mappedBy="attribute")
+	@OneToMany(mappedBy = "attribute")
 	private List<ProductAttributeValue> productAttributeValues = new ArrayList<>();
-	
-	@ManyToMany(fetch=FetchType.EAGER)
+
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Category> categories;
 
 	public long getId() {
@@ -78,12 +76,5 @@ public class Attribute {
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
-	
-	//---------------------------------------------------------------------------------
-
-
-	
-	
-	
 
 }

@@ -13,45 +13,38 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-
 @Entity
-@Table(name="products")
+@Table(name = "products")
 public class Product {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
 	@NotBlank
 	private String name;
 
 	private String description;
-	
+
 	private Double price;
-	
-	
+
 	private String quantityUnit;
-	
+
 	private String producent;
-	
-	
+
 	private String linkToPhoto;
-	
+
 	@ManyToOne
 	@NotNull
 	private Category category;
-	
-	@OneToMany(mappedBy="product")
+
+	@OneToMany(mappedBy = "product")
 	private List<ProductAttributeValue> productAttributeValues;
-	
-	@OneToMany(mappedBy="product")
+
+	@OneToMany(mappedBy = "product")
 	private List<CartItem> cartItems;
 
-	//---------------------------------------------------------------------------------
-	
-	
-	
 	public long getId() {
 		return id;
 	}
@@ -128,11 +121,7 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
 				+ ", quantityUnit=" + quantityUnit + ", producent=" + producent + ", linkToPhoto=" + linkToPhoto
-				+ ", category=" + category +"]";
+				+ ", category=" + category + "]";
 	}
-	
-	
-	
-	
-	
+
 }

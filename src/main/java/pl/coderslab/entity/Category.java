@@ -17,8 +17,6 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-
-
 @Entity
 @Table(name="categories")
 public class Category {
@@ -39,7 +37,7 @@ public class Category {
 	private Category parent;
 	
 	
-	@OneToMany(mappedBy="category") //nie dziala cascadeType ????????????????????????
+	@OneToMany(mappedBy="category") 
 	private List<Product> products ;
 	
 
@@ -105,15 +103,4 @@ public class Category {
 	public void setAttributes(List<Attribute> attributes) {
 		this.attributes = attributes;
 	}
-
-	
-	//-------------------------------------------------------------------------------------------------------------
-	
-	
-
-	
-	
-	
-	
-
 }

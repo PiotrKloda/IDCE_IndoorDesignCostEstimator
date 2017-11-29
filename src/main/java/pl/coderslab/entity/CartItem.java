@@ -15,27 +15,25 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="cartItems")
+@Table(name = "cartItems")
 public class CartItem {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
 	@NotBlank
 	private String name;
-	
+
 	private Date created;
-	private Date saved; //when user prints cart
-	
+	private Date saved;
+
 	@ManyToOne
 	private Product product;
-	
+
 	@ManyToOne
 	private Cart cart;
-	
-	//---------------------------------
 
 	public long getId() {
 		return id;
@@ -84,15 +82,5 @@ public class CartItem {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	
-	
-	
-	
-	
-
-
-	
-	
-	
 
 }

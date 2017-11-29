@@ -30,8 +30,6 @@ public class ProductAttributeValue {
 	@ManyToOne 
 	private Attribute attribute;
 	
-	
-	//----------------------------------------------------
 
 	public long getId() {
 		return id;
@@ -40,7 +38,6 @@ public class ProductAttributeValue {
 	public String getValue() {
 		return value;
 	}
-
 
 	public Product getProduct() {
 		return product;
@@ -66,6 +63,4 @@ public class ProductAttributeValue {
 	public void setAttribute(Attribute attribute) {
 		this.attribute = attribute;
 	}
-
-	
 }
