@@ -1,7 +1,6 @@
 package pl.coderslab.entity;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,14 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name = "cartItems")
-public class CartItem {
+@Table(name = "projectsProducts")
+public class ProjectProducts {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +31,7 @@ public class CartItem {
 	private Product product;
 
 	@ManyToOne
-	private Cart cart;
+	private Project project;
 
 	public long getId() {
 		return id;
@@ -55,8 +53,8 @@ public class CartItem {
 		return product;
 	}
 
-	public Cart getCart() {
-		return cart;
+	public Project getProject() {
+		return project;
 	}
 
 	public void setId(long id) {
@@ -79,8 +77,13 @@ public class CartItem {
 		this.product = product;
 	}
 
-	public void setCart(Cart cart) {
-		this.cart = cart;
+	public void setProject(Project project) {
+		this.project = project;
 	}
 
+	
+	
+	
+	
+	
 }

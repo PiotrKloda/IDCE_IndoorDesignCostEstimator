@@ -23,26 +23,35 @@
 	<%@ include file="../../../WEB-INF/headerProject.jsp"%>
 	<div style="padding-left: 15px">
 		<div>
-			<h1>New project</h1>
-			<f:form method="post" modelAttribute="cart"
-				class="col-xs-9 well">
+			<h1>All projects</h1>
 
-				<div class="form-group">
-					<label class="control-label">New project name:</label>
-					<f:input path="name" class="form-control" />
-					<f:errors path="name" cssClass="error" />
-				</div>
+			<table class="table table-bordered well">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Created</th>
+					<th>Updated</th>
+					<th>Choose to work with the Project</th>
 
+				</tr>
 
-
-				<div>
-					<button type="submit" value="Submit" class="btn btn-success">Begin new project</button>
-				</div>
-			</f:form>
+				<c:forEach items="${allProjects}" var="project">
+					<tr>
+						<td>${project.id}</td>
+						<td>${project.name}</td>
+						<td>${project.created}</td>
+						<td>${project.saved}</td>
+						<td><a
+							href="http://localhost:8080/IDCE/project/build/${project.id}"
+							class="btn btn-info" role="button">Choose</a></td>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
 
 		<div style="clear: both" style="padding-left: 15px">
-			<a href="http://localhost:8080/IDCE/productAttributeValue/list">back</a>
+			<a href="http://localhost:8080/IDCE/project">back to Project
+				HomePage</a>
 		</div>
 
 	</div>

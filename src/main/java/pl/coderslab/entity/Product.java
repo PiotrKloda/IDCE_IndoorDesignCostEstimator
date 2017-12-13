@@ -43,7 +43,7 @@ public class Product {
 	private List<ProductAttributeValue> productAttributeValues;
 
 	@OneToMany(mappedBy = "product")
-	private List<CartItem> cartItems;
+	private List<ProjectProducts> cartItems;
 
 	public long getId() {
 		return id;
