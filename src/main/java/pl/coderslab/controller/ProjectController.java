@@ -1,5 +1,7 @@
 package pl.coderslab.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -13,7 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pl.coderslab.entity.Category;
 import pl.coderslab.entity.Project;
+import pl.coderslab.repository.CategoryRepository;
 import pl.coderslab.repository.ProjectRepository;
 
 @Controller
@@ -22,6 +26,7 @@ public class ProjectController {
 
 	@Autowired
 	private ProjectRepository projectRepository;
+
 
 	@GetMapping("")
 	public String homePage() {
@@ -65,6 +70,9 @@ public class ProjectController {
 		return "/project/details";
 		
 	}
+	
+	
+	
 	
 	
 	

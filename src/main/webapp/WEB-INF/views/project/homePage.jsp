@@ -28,8 +28,8 @@
 		</a> <br> <a href="http://localhost:8080/IDCE/project/list">
 			<div class="well well-nl col-xs-3" style="clear: both">LoadProject</div>
 		</a> <br> 
-		<a href="http://localhost:8080/IDCE/project">
-			<div class="well well-nl col-xs-3" style="clear: both">---Search Products</div>
+		<a href="http://localhost:8080/IDCE/project/search">
+			<div class="well well-nl col-xs-3" style="clear: both">Search Products</div>
 		</a> <br> 
 	</div>
 	</div>
