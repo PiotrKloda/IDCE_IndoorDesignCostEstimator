@@ -32,7 +32,13 @@ public class ProjectProductController {
 	@GetMapping("/search")
 	public String searchCategory(Model model) {
 		List <Category> categoriesNotNull = categoryRepository.findByParent_idNull();
-		model.addAttribute("categoriesNull", categoriesNotNull);
+		
+		for (Category eachCategory:categoriesNotNull) { //check if the list has any items
+			System.out.println(eachCategory);
+		}
+		
+		model.addAttribute("categoriesNotNull", categoriesNotNull);
+		model.addAttribute("categoryToFill", new Category());
 		return "/projectProducts/searchCategory";
 	}
 	

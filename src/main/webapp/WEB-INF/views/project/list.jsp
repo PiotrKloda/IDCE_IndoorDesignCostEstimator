@@ -42,7 +42,7 @@
 						<td>${project.created}</td>
 						<td>${project.saved}</td>
 						<td><a
-							href="http://localhost:8080/IDCE/project/build/${project.id}"
+							href="http://localhost:8080/IDCE/project/details/${project.id}"
 							class="btn btn-info" role="button">Choose</a></td>
 					</tr>
 				</c:forEach>

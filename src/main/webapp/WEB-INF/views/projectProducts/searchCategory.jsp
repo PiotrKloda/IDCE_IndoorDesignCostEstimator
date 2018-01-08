@@ -23,25 +23,37 @@
 	<%@ include file="../../../WEB-INF/headerProject.jsp"%>
 	<div>
 		<h1>Choose Category</h1>
-		<f:form method="post" modelAttribute="category"
-			class="col-xs-9 well">
+		<f:form method="post" modelAttribute="categoryToFill" class="col-xs-9 well">
 
 			<div class="form-group">
 				<label class="control-label">Category:</label>
-				<f:select path="Category.id" class="form-control">
+				<f:select path="id" class="form-control">
 					<f:option value="0" label="---Choose category---" />
-					<f:options itemValue="id" itemLabel="name" items="${categoriesNull}" />
+					<f:options itemValue="id" itemLabel="name" items="${categoriesNotNull}" />
 				</f:select>
 			</div>
 
+
+		<%--<div class="form-group">
+				<label class="control-label">Subcategory of:</label>
+				<f:select path="parent" class="form-control">
+					<f:option value="0" label="---No parent category---" />
+					<f:options itemValue="id" itemLabel="name" items="${parents}" />
+				</f:select>
+			</div> --%>
+
+
+
 			<div>
-				<button type="submit" value="Submit" class="btn btn-success">Choose category</button>
+				<button type="submit" value="Submit" class="btn btn-success">Choose
+					category</button>
 			</div>
 		</f:form>
 	</div>
 
 	<div style="clear: both" style="padding-left: 15px">
-		<a href="http://localhost:8080/IDCE/project">back to Project management</a>
+		<a href="http://localhost:8080/IDCE/project">back to Project
+			management</a>
 	</div>
 </body>
 </html>

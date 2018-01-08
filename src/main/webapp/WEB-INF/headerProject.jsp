@@ -15,7 +15,7 @@
 	<div class="well">
 		<a href="http://localhost:8080/IDCE/"><h3>IDCE - Interior Design Cost Estimator</h3></a> <br>
 		<a href="http://localhost:8080/IDCE/project">Project management </a>
-		<h5>Current Project: <a href="http://localhost:8080/IDCE/project/build/">${currentProject.name}</a></h5>
+		<h5>Current Project: <a href="http://localhost:8080/IDCE/project/details/${currentProject.id}">${currentProject.name}</a></h5>
 	</div>
 </body>
 </html>
